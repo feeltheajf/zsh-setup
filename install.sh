@@ -27,7 +27,7 @@ sudo cp ${prefix}/bin/peco          /usr/local/bin/peco
 sh -c "cd ${prefix}/bin/fasd && sudo make install"
 sh -c "mkdir -p ~/.config/peco && cp ${prefix}/user/config.json ~/.config/peco/ && peco --rcfile ~/.config/peco/config.json 2> /dev/null"
 
-chsh ${USER} -s /usr/bin/zsh
+chsh ${USER} -s /bin/zsh
 
 echo "Setup completed"
 echo "Bye, ${USER}!"
