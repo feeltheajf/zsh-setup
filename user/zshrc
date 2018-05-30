@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-alias f="xdg-open ."
+alias f="xdg-open . &> /dev/null"
 alias bp="nano ~/.zshrc"
 alias src="source ~/.zshrc"
 alias ss="sudo su"
