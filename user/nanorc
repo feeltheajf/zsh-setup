@@ -1,5 +1,4 @@
 set nowrap
-set linenumbers
 set smooth
 set regexp
 set tabsize 4
