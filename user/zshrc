@@ -100,11 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 alias f="xdg-open . &> /dev/null"
 alias bp="nano ~/.zshrc"
 alias src="source ~/.zshrc"
-alias ss="sudo su"
 alias rf="rm -rf"
 
 screenkill() {
@@ -115,12 +113,23 @@ screenkill() {
     echo "Done"
 }
 
+scr() {
+    if [[ -n $1 ]]; then
+        session=$(screen -ls | grep -oE "\d+\.$1")
+        if [[ -n $session ]]; then
+            screen -r $session
+        else
+            screen -S $1
+        fi
+    else
+        screen -R
+    fi
+}
+
 alias p2="python2"
 alias p3="python3"
-alias pip="pip2"
 
 alias sz="du -ahd 1 | sort --human-numeric-sort"
-alias sys="sudo systemctl"
-alias scr="screen -dR"
+alias ss="sudo systemctl"
 
 export LC_ALL="en_US.UTF-8"
