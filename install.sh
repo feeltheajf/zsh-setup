@@ -32,5 +32,4 @@ chsh ${USER} -s /usr/bin/zsh
 echo "Setup completed"
 echo "Bye, ${USER}!"
 
-sed -i -e '1iexec -l zsh\' ~/.bashrc
 exec -l zsh
