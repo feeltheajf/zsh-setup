@@ -31,5 +31,3 @@ chsh ${USER} -s /usr/bin/zsh
 
 echo "Setup completed"
 echo "Bye, ${USER}!"
-
-exec -l zsh
