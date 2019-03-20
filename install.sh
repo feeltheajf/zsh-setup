@@ -6,11 +6,13 @@ package_manager="apt-get install -y --upgrade"
 
 if [ -f "/usr/bin/pacman" ]; then
 	package_manager="pacman -Sy --noconfirm"
+elif [-f "/usr/bin/yum" ]; then
+	package_manager="yum install -y"
 fi
 
 echo "I need root privileges to install necessary packages"
 sudo -K
-sh -c "sudo ${package_manager} zsh "
+sh -c "sudo ${package_manager} zsh"
 
 echo "Setting up Oh-My-ZSH"
 rm -rf ~/.oh-my-zsh
@@ -27,7 +29,7 @@ sudo cp ${prefix}/bin/peco          /usr/local/bin/peco
 sh -c "cd ${prefix}/bin/fasd && sudo make install"
 sh -c "mkdir -p ~/.config/peco && cp ${prefix}/user/config.json ~/.config/peco/ && peco --rcfile ~/.config/peco/config.json 2> /dev/null"
 
-chsh ${USER} -s /usr/bin/zsh
+chsh ${USER} -s /bin/zsh
 
 echo "Setup completed"
 echo "Bye, ${USER}!"
